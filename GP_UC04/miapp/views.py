@@ -71,7 +71,7 @@ def listar_estudiantes(request):
             Q(nombre__contains="Hab")
     )"""
     return render(request, 'listar_estudiantes.html',{
-        'estudiantes': estudiantes,
+        'estudiantes': {estudiantes},
         'nombre': 'Listado de estudiantes'
     })
 
