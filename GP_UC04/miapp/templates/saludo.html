@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block title %}
+{{titulo}}
+{% endblock %}
+{% block content %}
+    <h1 class="title">Hola y Bienvenidos</h1>
+    {{autor_saludo}}
+    <p>
+    {{ block.super }}
+    </p>
+{% endblock %}
+<!--Listo-->

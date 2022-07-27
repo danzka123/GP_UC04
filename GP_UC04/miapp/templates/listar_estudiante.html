@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+ 
+{% block title %}
+    {{titulo}}
+{% endblock %}
+ 
+{% block content %}
+    <h1 class="title">{{titulo}} </h1>
+    <ul>
+        {% for estudiante in estudiantes %}
+            <li>
+                <h4>{{estudiante.id}} - {{estudiante.nombre}} {{estudiante.apepat}} {{estudiante.apemat}}</h4> 
+                <span>Dirección: {{estudiante.direccion}}</span>
+                 {% if estudiante.estado %}
+                    <strong> Opc 1: Soltero </strong>
+                {% else %}
+                    <strong> Opc 2 : Casado </strong>
+                {% endif %}
+                
+                <p>
+                    {{estudiante.contenido}}<br>
+                    <a href="{% url 'eliminar_estudiante' id=estudiante.id %}">Eliminar</a>
+                 </p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+<!--Listo-->

@@ -1,0 +1,14 @@
+<br>
+<hr>
+<br>
+    <strong><h3>Los integrantes son:</h3></strong>
+    <ul>
+        {% for estudiante in estudiantes  %}
+            <li>{{forloop.counter}}. {{estudiante}}</li>
+        {% empty %}
+            <p> No hay {{encabezado}}</p>
+        {% endfor %}
+
+    </ul>
+
+<!--Listo-->

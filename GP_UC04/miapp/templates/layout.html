@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}
+
+            {% endblock %}
+        </title>
+                {% load static %}
+                <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    </head>
+    <body>
+        <header>
+                <div id="logotipo" style="width: 95%!important;">
+                    <img src="{% static 'imagen/Untels_02.png' %}" />
+                    <h1 style="color:aliceblue;">Proyecto Web- UC4 (LP3)</h1>
+                </div>
+        </header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{% url 'inicio' %}"> Inicio</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'saludo' %}"> Mensaje de saludo</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'listar_estudiantes' %}">Lista de Estudiantes </a><!--listar_estudiantes-->
+                    </li>
+                    <li>
+                        <a href="{% url 'create_estudiante' %}"> Registrar Estudiante</a><!--create_estudiantes-->
+                    </li>
+        </ul>
+            </nav>
+            <div class="barra">
+                <span class="esquina-izquierda"></span>
+                <span class="relleno-barra"></span>
+                <span class="esquina-derecha"></span>
+            </div>
+            <div id="content">
+                <div class ="box">
+                    
+                    {% block content %}
+                        <strong> Contenido en layout (Padre) </strong>
+                    {% endblock %}
+                </div> 
+            </div>
+        <footer>
+            UNTELS - Lenguaje de Programación III &COPY; - {% now "d/m/Y h:m:s" %}
+        </footer>
+    </body>
+    </html>

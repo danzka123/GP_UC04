@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% block title %}
+    Formulario Registrar Estudiante
+{% endblock %}
+{% block content %}
+    <h1 class="title">Formularios</h1>
+    <form action="{% url 'save_estudiante' %}" method="GET">
+        <label for="codigo">codigo</label>
+        <input type="number" name="codigo" />
+
+        <label for="dni">DNI</label>
+        <input type="number" name="dni" />
+
+        <label for="nombre">nombre</label>
+        <input type="text" name="nombre" />
+
+        <label for="apepat">Apellido Paterno</label>
+        <input type="text" name="apepat" />
+
+        <label for="apemat">Apellido Materno</label>
+        <input type="text" name="apemat" />
+ 
+        <label for="direccion">Dirección</label>
+        <textarea name="direccion"></textarea>
+ 
+        <label for="estado">Estado</label>
+        <select name="estado">
+            <option value="1"> Si </option>
+            <option value="0"> No </option>
+        </select>
+ 
+        <input type="submit" value="Agregar" />
+    </form>
+    
+{% endblock %}
+
+<!--Listo-->
